@@ -1,0 +1,47 @@
+<ngb-carousel *ngIf="images" [showNavigationIndicators]="false" [pauseOnHover]="true">
+  <ng-template ngbSlide>
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <mat-card class="example-card">
+        <img mat-card-image src="https://www.flashsaletricks.co.in/wp-content/uploads/2018/11/597x284_TRAVEL-OFFER1.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <h2 style="color: cadetblue;">
+              FLAT 5% CASHBACK
+          </h2>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button style="color: rgb(20, 49, 148);">On Every Ticket<mat-icon class="material-icons-outlined">arrow_right_alt</mat-icon></button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <mat-card class="example-card">            
+        <img mat-card-image src="https://www.flashsaletricks.co.in/wp-content/uploads/2018/11/597x284_TRAVEL-OFFER1.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <h2 style="color: cadetblue;">
+              CASHBACK OFFER
+          </h2>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button style="color: rgb(20, 49, 148);">On GreenLine Travels<mat-icon class="material-icons-outlined">arrow_right_alt</mat-icon></button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <mat-card class="example-card">       
+        <img mat-card-image src="https://www.flashsaletricks.co.in/wp-content/uploads/2018/11/597x284_TRAVEL-OFFER1.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <h2 style="color: cadetblue;">
+              CASH DISCOUNT
+          </h2>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button style="color: rgb(20, 49, 148);">On Bus Booking<mat-icon class="material-icons-outlined">arrow_right_alt</mat-icon></button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </ng-template>
+</ngb-carousel>

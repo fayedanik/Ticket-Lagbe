@@ -1,0 +1,28 @@
+
+mat-sidenav-container,mat-sidenav-content,mat-sidenav {
+    height: 100%;
+}
+
+mat-sidenav {
+    width: 300px;
+    background-color: rgba(117, 19, 93, 1);
+    color: #fff;
+    .sidenavup {
+        margin-top:50px;
+    }
+    span {
+        margin:10px;
+        button {
+            margin-top: 20px;
+        }
+    }
+    a {
+        font-size: 16px;
+        text-decoration: none;
+    }
+    .material-icons-two {
+        font-size: 20px;margin-right: 5px;
+    }
+}
+
+

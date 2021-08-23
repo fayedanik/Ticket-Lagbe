@@ -1,0 +1,41 @@
+
+<div class="header">
+    <mat-toolbar class="mattoolbar1" style="padding:0px">
+        <div fxFlex="98%" fxLayoutAlign="space-between center">
+            <div fxLayoutAlign="start center">
+                <button mat-icon-button style="left: 0;" *ngIf="screensize==='xs' || screensize==='sm' || screensize==='md'" (click)="onToggleSidenav()">
+                    <mat-icon>menu</mat-icon>
+                </button>
+                <div class="vl" *ngIf="screensize==='xs' || screensize==='sm' || screensize==='md'"></div>
+                <a href="#"><img src="https://s3.amazonaws.com/logosnap/logos/2021/Jul/original-9769-610043b9b4c9fwm.png" alt="Bus logo" class="largescalelogo" [ngClass]="{smallscalelogo:screensize==='xs'||screensize==='sm'}"></a>
+            </div>
+            <div flFlex="100%" fxLayoutAlign="space-between center">
+                <span>
+                    <button mat-button [matMenuTriggerFor]="afterMenu">EN <mat-icon>expand_more</mat-icon></button>
+                    <mat-menu #afterMenu="matMenu" xPosition="after">
+                    <button mat-menu-item>EN</button>
+                    <button mat-menu-item>BN</button>
+                    </mat-menu>
+                </span>
+                <span class="vl"></span>
+                <!-- <div>Icons made by <a href="" title="Icon Pond">Icon Pond</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+                <span *ngIf="screensize!=='xs'" class="acountlogin-big"><a mat-raised-button><mat-icon class="material-icons-outlined">account_circle</mat-icon> LOGIN</a></span>
+                <span *ngIf="screensize==='xs'" class="accountlogin-small"><a mat-raised-buttton><mat-icon class="material-icons-outlined">account_circle</mat-icon></a></span>
+            </div>
+        </div>
+    </mat-toolbar>
+    <div *ngIf="screensize!=='sm' && screensize!=='xs' && screensize!=='md'">
+        <mat-toolbar class="mattoolbar2">
+            <div fxFlex="100%" fxLayoutAlign="space-evenly center">
+                <span><a mat-button><mat-icon class="material-icons-two">home</mat-icon>Home</a></span>
+                <span><a mat-button><mat-icon class="material-icons-two">star_rate</mat-icon>Deals & Offers</a></span>
+                <span><a mat-button><mat-icon class="material-icons-two">delete_sweep</mat-icon>Cancel Ticket</a></span>
+                <span><a mat-button><mat-icon class="material-icons-two">verified</mat-icon>Verify Ticket</a></span>
+                <span><a mat-button><mat-icon class="material-icons-two">quiz</mat-icon>FAQ</a></span>
+            </div>
+        </mat-toolbar>
+    </div>
+</div>
+<div [ngStyle]="{'margin-top':getmargin()}">
+
+</div>

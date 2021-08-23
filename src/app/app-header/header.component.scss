@@ -1,0 +1,54 @@
+
+.header {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    overflow: hidden;
+    width: 100%;
+}
+
+.mattoolbar1 {
+
+    height: 80px;
+
+    .vl {
+        border-left: 1px solid #cfd5e3;
+        height: 80px;
+        opacity: 1;
+    }
+    
+    .largescalelogo {
+        width: 100px;
+        height: 80px;
+    }
+    
+    .smallscalelogo {
+        width: 80px;
+        height: 80px;
+        margin-left: -6px;
+    }
+    a {
+        text-decoration: none;
+    }
+}
+
+.mattoolbar2 {
+    background-color: rgba(117, 19, 93, 1);
+    color: #fff;
+    height: 70px;
+    a {
+        font-size: 16px;
+        text-decoration: none;
+    }
+    .material-icons-two {
+        font-size: 20px;margin-right: 5px;
+    }
+}
+.acountlogin-big {
+    margin-left:20px;
+}
+.accountlogin-small {
+    margin-left:10px;
+    margin-top:6px;
+    cursor: pointer;
+}

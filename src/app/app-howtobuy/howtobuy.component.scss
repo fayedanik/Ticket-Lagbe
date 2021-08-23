@@ -1,0 +1,32 @@
+.howtobuy {
+    height: 500px;
+    font-family: 'Lato', sans-serif !important;
+    h1 {
+        text-align: center;
+        font-weight: 600;
+        letter-spacing: 8px;
+        padding:0px;
+        margin: 0px;
+        font-size: 30px;
+    }
+    p {
+        font-size: 12px;
+        text-align: start;
+    }
+}
+.mattabicon {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(204, 223, 179);
+    position: relative;
+    overflow:hidden;
+    .maticon {
+        color: rgb(51, 51, 201);
+        margin:0;
+        top:24%;
+        left: 24%;
+        position: absolute;
+        transform: translate(-50%,-50%);
+        font-size: 80px;
+    }
+}

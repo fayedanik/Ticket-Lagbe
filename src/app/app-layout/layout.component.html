@@ -1,0 +1,161 @@
+
+<div class="main-container">
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <h1>Book Your Ticket</h1>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center" fxLayout.lt-md="column" fxLayoutGap.lg="20px" fxLayoutGap.xl="20px" fxLayoutGap.md="20px">
+        <div fxFlex="30">
+            <mat-form-field appearance="outline" class="matformfield" [ngClass]="{ forsmalldevice: screensize==='xs'|| screensize==='sm'}">
+                <mat-label class="placeholder">From</mat-label>
+                <input matInput type="text">
+                <span matPrefix><mat-icon class="material-icons-outlined" style="margin-right: 5px;">room</mat-icon>&nbsp;</span>
+            </mat-form-field>
+        </div>
+        <div fxFlex="30">
+            <mat-form-field appearance="outline" class="matformfield" [ngClass]="{ forsmalldevice: screensize==='xs'|| screensize==='sm'}">
+                <mat-label class="placeholder">To</mat-label>
+                <input matInput type="text">
+                <span matPrefix><mat-icon class="material-icons-outlined" style="margin-right: 5px;">room</mat-icon>&nbsp;</span>
+            </mat-form-field>
+        </div>
+        
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center" fxLayout.lt-md="column" fxLayoutGap.lg="20px" fxLayoutGap.xl="20px" fxLayoutGap.md="20px">
+        <div fxFlex="30">
+            <mat-form-field appearance="outline" class="matformfield" [ngClass]="{ forsmalldevice: screensize==='xs'|| screensize==='sm'}">
+                <mat-label class="placeholder">Date of journey</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <span matPrefix><mat-icon class="material-icons-outlined" style="margin-right:9px;">schedule</mat-icon>&nbsp;</span>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div fxFlex="30">
+            <mat-form-field appearance="outline" class="matformfield" [ngClass]="{ forsmalldevice: screensize==='xs'|| screensize==='sm'}">
+                <mat-label class="placeholder">Date of return (Optional)</mat-label>
+                <input matInput [matDatepicker]="picker1">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <span matPrefix><mat-icon class="material-icons-outlined" style="margin-right:9px;">schedule</mat-icon>&nbsp;</span>
+                <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+        </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <div fxFlex.lt-md="100" [ngClass]="{ forsmalldevice: screensize==='xs'|| screensize==='sm'}">
+            <button mat-raised-button><mat-icon class="material-icons-outlined">search</mat-icon>Search Buses</button>
+        </div>
+    </div>
+</div>
+
+<div>
+    <app-howtobuy></app-howtobuy>
+</div>
+
+<div class="offer-section">
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <h1>Featured Offers</h1>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <h4>Get Best Bus Booking Offers & Discounts</h4>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center" style="margin-top: 50px;margin-bottom:50px" fxLayout.lt-md="column" fxHide.lt-md="true">
+        <div fxFlex="80" fxFlex.gt-lg="60" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px" fxLayout.lt-md="column">
+            <div>
+                <mat-card class="example-card">
+                    <img mat-card-image src="https://www.flashsaletricks.co.in/wp-content/uploads/2018/11/597x284_TRAVEL-OFFER1.jpg" alt="Photo of a Shiba Inu">
+                    <mat-card-content>
+                      <h2 style="color: cadetblue;">
+                          FLAT 5% CASHBACK
+                      </h2>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-button style="color: rgb(20, 49, 148);">On Every Ticket<mat-icon class="material-icons-outlined">arrow_right_alt</mat-icon></button>
+                    </mat-card-actions>
+                  </mat-card>
+            </div>
+            <div>
+                <mat-card class="example-card">
+                    <img mat-card-image src="https://www.flashsaletricks.co.in/wp-content/uploads/2018/11/597x284_TRAVEL-OFFER1.jpg" alt="Photo of a Shiba Inu">
+                    <mat-card-content>
+                      <h2 style="color: cadetblue;">
+                          CASHBACK OFFER
+                      </h2>
+                    </mat-card-content>
+                    <mat-card-actions>
+                      <button mat-button style="color: rgb(20, 49, 148);">On GreenLine Travels<mat-icon class="material-icons-outlined">arrow_right_alt</mat-icon></button>
+                    </mat-card-actions>
+                  </mat-card>
+            </div>
+            
+            <div>
+                <mat-card class="example-card">
+                    <img mat-card-image src="https://www.flashsaletricks.co.in/wp-content/uploads/2018/11/597x284_TRAVEL-OFFER1.jpg" alt="Photo of a Shiba Inu">
+                    <mat-card-content>
+                      <h2 style="color: cadetblue;">
+                          CASH DISCOUNT
+                      </h2>
+                    </mat-card-content>
+                    <mat-card-actions>
+                      <button mat-button style="color: rgb(20, 49, 148);">On Bus Booking<mat-icon class="material-icons-outlined">arrow_right_alt</mat-icon></button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+    <div style="margin-top: 50px;margin-bottom:50px" fxHide="true" fxShow.lt-md="true">
+        <app-carousel></app-carousel>
+    </div>
+</div>
+
+<div class="popular-bus-routes">
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <h1>Popular Bus Routes</h1>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <div fxFlex="70" fxFlex.lt-md="100">
+            <hr>
+        </div>
+    </div>
+    <div class="middle-gap"></div>
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center">
+        <div fxFlex="32">
+            <div *ngFor="let i of mynumber">
+                <div fxLayout="row" fxLayoutAlign="space-between center">
+                    <div>
+                        <p>Dhaka To Chittagong</p>
+                    </div>
+                    <div>
+                        <button mat-stroked-button color="primary">Book Now</button>
+                    </div>
+                </div>
+                <div fxLayout="row">
+                    <hr class="hr_config">
+                </div>
+            </div>
+        </div>
+        <div fxFlex="6"></div>
+        <div fxFlex="32">
+            <div *ngFor="let i of mynumber">
+                <div fxLayout="row" fxLayoutAlign="space-between center">
+                    <div>
+                        <p>Rajshahi To Dhaka</p>
+                    </div>
+                    <div>
+                        <button mat-stroked-button color="primary">Book Now</button>
+                    </div>
+                </div>
+                <div fxLayout="row">
+                    <hr class="hr_config">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="height: 500px;">
+
+</div>
+
+<div>
+    <app-footer></app-footer>
+</div>
