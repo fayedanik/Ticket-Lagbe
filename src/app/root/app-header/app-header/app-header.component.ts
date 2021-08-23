@@ -1,14 +1,14 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MediaChange, MediaObserver } from '@angular/flex-layout';
 import { Subscription } from 'rxjs';
 
-
 @Component({
   selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  templateUrl: './app-header.component.html',
+  styleUrls: ['./app-header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class AppHeaderComponent implements OnInit {
 
   @Output() public sidenavToggle = new EventEmitter();
 
@@ -42,4 +42,5 @@ export class HeaderComponent implements OnInit {
   ngOnDestroy() {
     this.mediaSub.unsubscribe();
   }
+
 }

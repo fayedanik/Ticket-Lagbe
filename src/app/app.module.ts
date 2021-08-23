@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { LayoutComponent } from './app-layout/layout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
-import { HeaderComponent } from './app-header/header.component';
+
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -23,18 +23,22 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatTabsModule } from '@angular/material/tabs';
 import { CarouselComponent } from './carousel/carousel.component';
 import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FooterComponent } from './app-footer/footer.component';
+
 import { HowtobuyComponent } from './app-howtobuy/howtobuy.component';
+import { AppHeaderComponent } from './root/app-header/app-header/app-header.component';
+import { AppFooterComponent } from './root/app-footer/app-footer/app-footer.component';
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     LayoutComponent,
     CarouselComponent,
-    FooterComponent,
-    HowtobuyComponent
+    HowtobuyComponent,
+    AppHeaderComponent,
+    AppFooterComponent,
   ],
   imports: [
     FlexLayoutModule,
