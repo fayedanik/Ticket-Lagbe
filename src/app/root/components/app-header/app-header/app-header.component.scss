@@ -1,4 +1,4 @@
-.header {
+.app-header {
     position: fixed;
     top: 0;
     z-index: 1000;
@@ -6,10 +6,13 @@
     width: 100%;
 }
 
+.active {
+    border: 1px solid #fff;
+}
+
 .mattoolbar1 {
 
     height: 80px;
-
     .vl {
         border-left: 1px solid #cfd5e3;
         height: 80px;
@@ -31,10 +34,17 @@
     }
 }
 
+.toolbar-container {
+    width: 100%;
+    max-width: calc((100% - (100vw - 1328px)));
+    margin: 0 auto;
+}
+
 .mattoolbar2 {
     background-color: rgba(117, 19, 93, 1);
     color: #fff;
     height: 70px;
+    //max-width: calc((100% - (100vw - 1328px)));
     a {
         font-size: 16px;
         text-decoration: none;

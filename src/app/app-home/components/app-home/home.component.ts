@@ -3,11 +3,11 @@ import { MediaChange, MediaObserver } from '@angular/flex-layout';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-layout',
-  templateUrl: './layout.component.html',
-  styleUrls: ['./layout.component.scss']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
 })
-export class LayoutComponent implements OnInit {
+export class AppHomeComponent implements OnInit {
   
   screensize:string = 'lg';
   mediaSub:Subscription;

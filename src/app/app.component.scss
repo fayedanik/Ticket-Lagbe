@@ -3,6 +3,9 @@ mat-sidenav-container,mat-sidenav-content,mat-sidenav {
     height: 100%;
 }
 
+.active {
+    border: 1px solid #fff;
+}
 mat-sidenav {
     width: 300px;
     background-color: rgba(117, 19, 93, 1);

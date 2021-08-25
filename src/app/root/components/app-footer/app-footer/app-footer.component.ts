@@ -1,21 +1,18 @@
-import { EventEmitter, Output } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import { MediaChange, MediaObserver } from '@angular/flex-layout';
+import { MediaChange,MediaObserver } from '@angular/flex-layout';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './app-header.component.html',
-  styleUrls: ['./app-header.component.scss']
+  selector: 'app-footer',
+  templateUrl: './app-footer.component.html',
+  styleUrls: ['./app-footer.component.scss']
 })
-export class AppHeaderComponent implements OnInit {
+export class AppFooterComponent implements OnInit {
 
-  @Output() public sidenavToggle = new EventEmitter();
-
-  constructor( public mediaobserver: MediaObserver ) { }
-  
   screensize:string = 'lg';
   mediaSub:Subscription;
+  
+  constructor( public mediaobserver: MediaObserver ) { }
 
   ngOnInit(): void {
     this.mediaSub = this.mediaobserver.media$.subscribe(
@@ -26,10 +23,6 @@ export class AppHeaderComponent implements OnInit {
     );
   }
 
-  onToggleSidenav() {
-    this.sidenavToggle.emit();
-  }
-
   getmargin() {
     if( this.screensize==='sm' || this.screensize==='xs' || this.screensize==='md' ) {
       return '70px';
@@ -37,10 +30,6 @@ export class AppHeaderComponent implements OnInit {
     else {
       return '150px';
     }
-  }
-
-  ngOnDestroy() {
-    this.mediaSub.unsubscribe();
   }
 
 }

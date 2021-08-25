@@ -122,8 +122,6 @@
 }
 
 
-
-
 .example-card {
     max-width: 400px;
 }
@@ -133,6 +131,10 @@
     background-size: cover;
 }
 
+mat-datepicker {
+    color:#fff
+}
+
 ::ng-deep 
     .mat-form-field-appearance-outline .mat-form-field-outline {
        color: rgb(250, 250, 250);
@@ -140,9 +142,4 @@
     
     .placeholder {
         color:rgb(211, 211, 221);
-    }
-    .mat-button-wrapper {
-        svg {
-            fill: #fff;
-        }
     }
