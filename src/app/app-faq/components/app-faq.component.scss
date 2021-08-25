@@ -1,7 +1,59 @@
 
 .faq-container {
     width: 100%;
-    max-width: calc((100% - (100vw - 1299px)));
-    max-height: 100vh;
+    max-width: calc((100% - (100vw - 1200px)));
     margin: 0 auto;
+    min-height: 100%;
+    position: relative;
+    h1 {
+        text-align: center;
+        font-weight: 600;
+        font-family: 'Lato', sans-serif;
+        padding: 20px;
+        margin: 0px;
+    }
+    .faq-wrapper {
+        width: 100%;
+        padding: 0 20px 20px 20px;
+        h2 {
+            font-family: 'Poppins", sans-serif';
+            font-weight: 300px;
+            color: #4d6886;
+            letter-spacing: 0.4px;
+            text-align: center;
+        }
+    }
+}
+
+mat-panel-title {
+    color: #75135d;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.mat-expansion-panel-header.mat-expanded {
+    height: 48px !important;
+}
+
+mat-expansion-panel-header:hover,
+mat-expansion-panel-header.mat-expanded,
+mat-expansion-panel-header.mat-expanded:hover,
+mat-expansion-panel-header.mat-expanded:focus {
+    background: #75135d !important;
+    mat-panel-title {
+        color: #fff !important;
+    }
+}
+
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 5px;
+}
+
+
+::ng-deep .mat-expansion-panel:hover .mat-expansion-indicator::after,
+.mat-expansion-panel:focus .mat-expansion-indicator::after {
+  color: white !important;
+}
+::ng-deep .mat-expansion-panel-header.mat-expanded .mat-expansion-indicator::after {
+    color: white !important;
 }
