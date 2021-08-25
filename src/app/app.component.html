@@ -7,17 +7,19 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenav role="navigation">
     <div fxLayout="column wrap" fxLayoutAlign="space-evenly center" class="sidenavup">
-        <span><a mat-button><mat-icon class="material-icons-two">home</mat-icon>Home</a></span>
+        <span><a mat-button routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><mat-icon class="material-icons-two">home</mat-icon>Home</a></span>
         <span><a mat-button><mat-icon class="material-icons-two">star_rate</mat-icon>Deals & Offers</a></span>
         <span><a mat-button><mat-icon class="material-icons-two">delete_sweep</mat-icon>Cancel Ticket</a></span>
         <span><a mat-button><mat-icon class="material-icons-two">verified</mat-icon>Verify Ticket</a></span>
-        <span><a mat-button><mat-icon class="material-icons-two">quiz</mat-icon>FAQ</a></span>
+        <span><a mat-button routerLink="/faq" routerLinkActive="active"><mat-icon class="material-icons-two">quiz</mat-icon>FAQ</a></span>
         <span><button mat-raised-button (click)="onCloseSidenav()"><mat-icon class="material-icons-outlined">arrow_back</mat-icon></button></span>
     </div>
   </mat-sidenav>
   <mat-sidenav-content>
     <main>
-      <app-layout></app-layout>
+      <router-outlet></router-outlet>
     </main>
+    <app-footer></app-footer>
   </mat-sidenav-content>
 </mat-sidenav-container>
+

@@ -1,6 +1,6 @@
-<div class="header">
-    <mat-toolbar class="mattoolbar1" style="padding:0px">
-        <div fxFlex="98%" fxLayoutAlign="space-between center">
+<div class="app-header">
+    <mat-toolbar class="mattoolbar1">
+        <div fxLayoutAlign="space-between center" class="toolbar-container">
             <div fxLayoutAlign="start center">
                 <button mat-icon-button style="left: 0;" *ngIf="screensize==='xs' || screensize==='sm' || screensize==='md'" (click)="onToggleSidenav()">
                     <mat-icon>menu</mat-icon>
@@ -25,16 +25,14 @@
     </mat-toolbar>
     <div *ngIf="screensize!=='sm' && screensize!=='xs' && screensize!=='md'">
         <mat-toolbar class="mattoolbar2">
-            <div fxFlex="100%" fxLayoutAlign="space-evenly center">
-                <span><a mat-button><mat-icon class="material-icons-two">home</mat-icon>Home</a></span>
+            <div fxLayout="row" fxLayoutAlign="space-between center" class="toolbar-container">
+                <span><a mat-button routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><mat-icon class="material-icons-two">home</mat-icon>Home</a></span>
                 <span><a mat-button><mat-icon class="material-icons-two">star_rate</mat-icon>Deals & Offers</a></span>
                 <span><a mat-button><mat-icon class="material-icons-two">delete_sweep</mat-icon>Cancel Ticket</a></span>
                 <span><a mat-button><mat-icon class="material-icons-two">verified</mat-icon>Verify Ticket</a></span>
-                <span><a mat-button><mat-icon class="material-icons-two">quiz</mat-icon>FAQ</a></span>
+                <span><a mat-button routerLink="/faq" routerLinkActive="active"><mat-icon class="material-icons-two">quiz</mat-icon>FAQ</a></span>
             </div>
         </mat-toolbar>
     </div>
 </div>
-<div [ngStyle]="{'margin-top':getmargin()}">
-
-</div>
+<div [ngStyle]="{'margin-top':getmargin()}"></div>
