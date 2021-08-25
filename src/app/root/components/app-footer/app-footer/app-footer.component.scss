@@ -1,4 +1,10 @@
 .footer {
     width: 100%;
-    overflow: hidden;
+    height: 40px;
+    position: relative;
+    margin-top: -40px;
+    clear: both;
+    p {
+        margin:0px;
+    }
 }
