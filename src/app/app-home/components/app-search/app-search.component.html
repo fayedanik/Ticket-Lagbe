@@ -1,0 +1,48 @@
+
+<div class="main-container">
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <h1>Book Your Ticket</h1>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center" fxLayout.lt-md="column" fxLayoutGap.lg="20px" fxLayoutGap.xl="20px" fxLayoutGap.md="20px">
+        <div fxFlex="30">
+            <mat-form-field appearance="outline" class="matformfield" [ngClass]="{ sm: screensize==='xs'|| screensize==='sm'}">
+                <mat-label class="placeholder">From</mat-label>
+                <input matInput type="text">
+                <span matPrefix><mat-icon class="material-icons-outlined" style="margin-right: 5px;">room</mat-icon>&nbsp;</span>
+            </mat-form-field>
+        </div>
+        <div fxFlex="30">
+            <mat-form-field appearance="outline" class="matformfield" [ngClass]="{ sm: screensize==='xs'|| screensize==='sm'}">
+                <mat-label class="placeholder">To</mat-label>
+                <input matInput type="text">
+                <span matPrefix><mat-icon class="material-icons-outlined" style="margin-right: 5px;">room</mat-icon>&nbsp;</span>
+            </mat-form-field>
+        </div>
+        
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center" fxLayout.lt-md="column" fxLayoutGap.lg="20px" fxLayoutGap.xl="20px" fxLayoutGap.md="20px">
+        <div fxFlex="30">
+            <mat-form-field appearance="outline" class="matformfield" [ngClass]="{ sm: screensize==='xs'|| screensize==='sm'}">
+                <mat-label class="placeholder">Date of journey</mat-label>
+                <input matInput [matDatepicker]="picker" (click)="picker.open()">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <span matPrefix><mat-icon class="material-icons-outlined" style="margin-right:9px;">schedule</mat-icon>&nbsp;</span>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div fxFlex="30">
+            <mat-form-field appearance="outline" class="matformfield" [ngClass]="{ sm: screensize==='xs'|| screensize==='sm'}">
+                <mat-label class="placeholder">Date of return (Optional)</mat-label>
+                <input matInput [matDatepicker]="picker1" (click)="picker1.open()">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <span matPrefix><mat-icon class="material-icons-outlined" style="margin-right:9px;">schedule</mat-icon>&nbsp;</span>
+                <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+        </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <div fxFlex.lt-md="100" [ngClass]="{ sm: screensize==='xs'|| screensize==='sm'}">
+            <button mat-raised-button><mat-icon class="material-icons-outlined" type="submit">search</mat-icon>Search Buses</button>
+        </div>
+    </div>
+</div>
