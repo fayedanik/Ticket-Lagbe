@@ -4,6 +4,7 @@ import { AppFaqComponent } from "./components/app-faq.component";
 import { AppFaqRoutingModule } from "./app-faq.routing";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { MatExpansionModule } from '@angular/material/expansion';
+import { CommonModule } from "@angular/common";
 @NgModule({
     declarations:[
         AppFaqComponent
@@ -11,7 +12,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     imports:[
         AppFaqRoutingModule,
         FlexLayoutModule,
-        MatExpansionModule
+        MatExpansionModule,
+        CommonModule
     ],
     exports:[]
 })

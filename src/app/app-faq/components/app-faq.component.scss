@@ -1,10 +1,15 @@
-
+.faq-main {
+    width: 100%;
+    background: #eaebec;
+}
 .faq-container {
     width: 100%;
-    max-width: calc((100% - (100vw - 1200px)));
+    max-width: calc((100% - (100vw - 1308px)));
     margin: 0 auto;
     min-height: 100%;
     position: relative;
+    background: #fff;
+    border-radius: 5px;
     h1 {
         text-align: center;
         font-weight: 600;
@@ -26,8 +31,8 @@
 }
 
 mat-panel-title {
-    color: #75135d;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #728a8e;
+    font-family: Poppins, sans-serif;
 }
 
 .mat-expansion-panel-header.mat-expanded {
@@ -45,8 +50,18 @@ mat-expansion-panel-header.mat-expanded:focus {
 }
 
 p {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Poppins, sans-serif;
     padding: 5px;
+    color: #535B61;
+}
+
+.faq-bottom {
+    //background: rgb(255, 255, 255);
+    text-align: center;
+    padding: 30px 0 30px 0;
+    h2 {
+        color: rgb(66, 63, 63)
+    }
 }
 
 

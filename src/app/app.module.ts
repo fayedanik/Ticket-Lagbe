@@ -8,13 +8,16 @@ import { FormsModule } from '@angular/forms';
 import { AppHeaderComponent } from './root/components/app-header/app-header/app-header.component';
 import { AppFooterComponent } from './root/components/app-footer/app-footer/app-footer.component';
 import { MaterialModule } from './material.module';
+import { AppFeatureComponent } from './app-feature/components/app-feature/app-feature.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AppHeaderComponent,
-    AppFooterComponent
+    AppFooterComponent,
+    AppFeatureComponent
   ],
   imports: [
     FlexLayoutModule,

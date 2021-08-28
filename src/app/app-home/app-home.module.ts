@@ -7,6 +7,7 @@ import { MaterialModule } from "../material.module";
 import { AppHomeComponent } from "./components/app-home/home.component";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { NgbCarouselModule, NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { AppSearchComponent } from './components/app-search/app-search.component';
 
 
 
@@ -15,7 +16,8 @@ import { NgbCarouselModule, NgbModule } from "@ng-bootstrap/ng-bootstrap";
     declarations:[
         AppHomeComponent,
         CarouselComponent,
-        HowtobuyComponent
+        HowtobuyComponent,
+        AppSearchComponent
     ],
     imports:[
         FlexLayoutModule,

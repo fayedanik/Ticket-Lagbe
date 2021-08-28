@@ -1,52 +1,3 @@
-
-
-
-.main-container {
-    background-image: linear-gradient(to bottom,rgba(117, 19, 93, 0.73),rgba(117, 19, 93, 0.4)),url('http://www.myreporter.com/wp-content/uploads/2011/03/School-bus-interior.jpg');
-    background-repeat: no-repeat;
-    background-color: #7d806a;
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 650px;
-    left:0;
-    right:0;
-    color: white;
-    align-items: center;
-    h1 {
-        text-align: center;
-        padding-top: 70px;
-        padding-bottom: 30px;
-        letter-spacing: 20px;
-        font-size: 30px;
-        font-weight: 600;
-        text-transform: uppercase;
-    }
-    button {
-        width: 100%;
-        height: 59px;
-        font-size: 18px;
-        margin-top: 25px;
-        font-weight: 600px;
-    }
-}
-
-.matformfield {
-    width: 100%;
-    color: #fff;
-    font-weight: 400;
-    font-size: 18px;
-}
-
-
-
-.forsmalldevice {
-    padding-left: 20px;
-    padding-right: 20px;
-    font-size: 15px;
-}
-
-
 .mattabicon {
     width: 100px;
     height: 100px;
@@ -130,15 +81,3 @@
     background-size: cover;
 }
 
-mat-datepicker {
-    color:#fff
-}
-
-::ng-deep 
-    .mat-form-field-appearance-outline .mat-form-field-outline {
-       color: rgb(250, 250, 250);
-    }
-    
-    .placeholder {
-        color:rgb(211, 211, 221);
-    }
