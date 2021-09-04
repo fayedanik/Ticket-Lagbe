@@ -13,6 +13,7 @@ export class AppHomeComponent implements OnInit {
   mediaSub:Subscription;
   constructor( public mediaobserver: MediaObserver ) { }
   public mynumber:any[] = [0,1,2,3,4,5];
+  
   ngOnInit(): void {
     this.mediaSub = this.mediaobserver.media$.subscribe(
       (res:MediaChange) => {

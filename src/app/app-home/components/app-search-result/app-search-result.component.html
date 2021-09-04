@@ -1,0 +1,140 @@
+<div class="search-result-container">
+    
+    <div class="container1">
+        <h2>Dhaka To Chittagong On 04-01-2021,Friday</h2>
+        <hr>
+        <div class="expansion-panel">
+            <mat-accordion displayMode="flat">
+                <mat-expansion-panel [expanded]="exp1">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Modify Search
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="form-container">
+                        <form>
+                            <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center">
+                                <div fxFlex="25">
+                                    <mat-form-field appearance="outline" class="matformfield mat-form-field-no-padding">
+                                        <mat-label class="placeholder">From</mat-label>
+                                        <input matInput type="text">
+                                        <span matPrefix><mat-icon class="material-icons-outlined" style="margin-right: 5px;">room</mat-icon>&nbsp;</span>
+                                    </mat-form-field>
+                                </div>
+                                <div fxFlex="25">
+                                    <mat-form-field appearance="outline" class="matformfield mat-form-field-no-padding">
+                                        <mat-label class="placeholder">To</mat-label>
+                                        <input matInput type="text">
+                                        <span matPrefix><mat-icon class="material-icons-outlined" style="margin-right: 5px;">room</mat-icon>&nbsp;</span>
+                                    </mat-form-field>
+                                </div>
+                                <div fxFlex="25">
+                                    <mat-form-field appearance="outline" class="matformfield mat-form-field-no-padding">
+                                        <mat-label class="placeholder">Date of journey</mat-label>
+                                        <input 
+                                            matInput
+                                            [matDatepicker]="picker"
+                                            (click)="picker.open()"
+                                            >
+                                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                        <span matPrefix><mat-icon class="material-icons-outlined" style="margin-right:9px;">schedule</mat-icon>&nbsp;</span>
+                                        <mat-datepicker #picker></mat-datepicker>
+                                    </mat-form-field>
+                                </div>
+                                <div fxFlex="25" fxLayout="row" fxLayoutAlign="center center" [ngClass]="{ m_5: screensize==='xs'|| screensize==='sm' || screensize==='md'}">
+                                    <button mat-raised-button style="background-color: #75135d;color: #fff;">Search</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </div>
+    <div class="container2" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutAlign="stretch flex-start">
+        <div class="childcontainer1" fxFlex="20">
+            <div fxFlex="row">
+                <div><h2>Filters</h2></div>
+                <hr>
+                <div class="expansion-panel">
+                    <mat-accordion displayMode="flat">
+                        <mat-expansion-panel [expanded]="exp1">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    Bus Operators
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <div class="filterbus">
+                                <input type="checkbox" id="0" name="0" value="0">
+                                <label for="0"> GreenLine</label><br>
+                                <input type="checkbox" id="1" name="1" value="1">
+                                <label for="1"> Sohag</label><br>
+                                <input type="checkbox" id="2" name="2" value="2">
+                                <label for="2"> Shyamoli</label><br><br>
+                            </div>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </div>
+                <hr>
+                <div class="expansion-panel">
+                    <mat-accordion displayMode="flat">
+                        <mat-expansion-panel [expanded]="exp1">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    Bus Type
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <div class="filterbus">
+                                <input type="checkbox" id="3" name="3" value="3">
+                                <label for="3"> AC</label><br>
+                                <input type="checkbox" id="4" name="4" value="4">
+                                <label for="4"> Non-AC</label><br>
+                            </div>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </div>
+            </div>
+        </div>
+        <div class="childcontainer2">
+            <h1>DashBoard</h1>
+            <p>33 Bus Found</p>
+            <hr>
+            <div class="mat-elevation-z8">
+                <table mat-table [dataSource]="dataSource" matSort>
+                    <ng-container matColumnDef="operatorName">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Operators </th>
+                        <td mat-cell *matCellDef="let element">
+                            {{element.operatorName}} 
+                            <br>
+                            <p><label for="">Starting Point:</label>{{element.startingPoint}}</p>
+                            <p><label for="">Ending Point:</label>{{element.endingPoint}}</p>
+                        </td>
+                    </ng-container>
+                    
+                    <ng-container matColumnDef="departureTime">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Dep. Time </th>
+                        <td mat-cell *matCellDef="let element"> {{element.departureTime}} </td>
+                    </ng-container>
+                  
+                    <ng-container matColumnDef="arrivalTime">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Arr. Time </th>
+                        <td mat-cell *matCellDef="let element"> {{element.arrivalTime}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="availableSeats">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Seats Available </th>
+                        <td mat-cell *matCellDef="let element"> {{element.availableSeats}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="fare">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Fare </th>
+                        <td mat-cell *matCellDef="let element"> ৳ {{element.fare}} </td>
+                    </ng-container>
+                  
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                  </table>
+            </div>
+        </div>
+    </div>
+</div>
