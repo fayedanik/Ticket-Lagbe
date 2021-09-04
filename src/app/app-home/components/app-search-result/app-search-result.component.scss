@@ -1,0 +1,128 @@
+
+.search-result-container {
+    background-color: #e4e4e4;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    overflow: hidden;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    .container1 {
+        width: 100%;
+        max-width: calc((100% - (100vw - 1308px)));
+        background: #ffff;
+        padding: 20px;
+        margin: 0 auto;
+    }
+    .container2 {
+        width: 100%;
+        max-width: calc((100% - (100vw - 1308px)));
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+    .childcontainer1 {
+        width: 100%;
+        background: #ffff;
+        padding: 20px;
+    }
+    .childcontainer2 {
+        background: #fff;
+        width: 100%;
+        padding: 20px;
+        color: #75135d;
+        h1 {
+            font-weight: 600;
+        }
+        p {
+            color: rgb(56, 73, 73);
+        }
+    }
+}
+
+.matformfield {
+    width: 100%;
+}
+
+.mat-raised-button {
+    line-height: 49px !important;
+    width: 100%;
+    min-width: 200px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0px;
+}
+
+.m_5 {
+    margin-top: 5px;
+}
+
+.filterbus {
+    margin-top: 20px;
+    input {
+        margin-right: 5px;
+    }
+}
+
+table {
+    width: 100%;
+}
+
+mat-panel-title {
+    color: #728a8e;
+    font-family: Poppins, sans-serif;
+}
+
+.mat-expansion-panel-header.mat-expanded {
+    height: 48px !important;
+    border-radius: 0px !important;
+}
+.form-container {
+    margin-top: 12px;
+}
+.mat-elevation-z8 {
+    label {
+        padding: 0;
+        margin: 0;
+        font-weight: 400;
+    }
+    p {
+        padding: 0;
+        margin: 0;
+        font-weight: 600;
+        color:#75135d !important;
+    }
+}
+
+mat-expansion-panel-header:hover,
+mat-expansion-panel-header.mat-expanded,
+mat-expansion-panel-header.mat-expanded:hover,
+mat-expansion-panel-header.mat-expanded:focus {
+    background: #beadba !important;
+    border-radius: 0px !important;
+    mat-panel-title {
+        color: #fff !important;
+    }
+}
+
+::ng-deep 
+    .mat-form-field-appearance-outline .mat-form-field-outline {
+       color: #beadba;
+    }
+    
+    .placeholder {
+        color:rgb(211, 211, 221);
+    }
+
+::ng-deep .mat-form-field-outline-start {
+    border-radius: 0px !important;
+}
+    
+::ng-deep .mat-form-field-outline-end {
+    border-radius: 0px !important;
+}
+
+::ng-deep .mat-expansion-panel:hover .mat-expansion-indicator::after,
+.mat-expansion-panel:focus .mat-expansion-indicator::after {
+  color: white !important;
+}
+::ng-deep .mat-expansion-panel-header.mat-expanded .mat-expansion-indicator::after {
+    color: white !important;
+}

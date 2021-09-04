@@ -18,6 +18,7 @@
         letter-spacing: 20px;
         font-size: 30px;
         font-weight: 600;
+        margin-right: -20px;
         text-transform: uppercase;
     }
     button {
@@ -46,6 +47,12 @@ mat-datepicker {
     color:#fff
 }
 
+mat-hint {
+    color: #FF0000;
+}
+
+
+
 ::ng-deep 
     .mat-form-field-appearance-outline .mat-form-field-outline {
        color: rgb(250, 250, 250);
@@ -54,3 +61,4 @@ mat-datepicker {
     .placeholder {
         color:rgb(211, 211, 221);
     }
+
