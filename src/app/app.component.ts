@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
     this.mediaSub = this.mediaobserver.media$.subscribe(
       (res:MediaChange) => {
         this.screensize = res.mqAlias;
-        console.log(this.screensize);
+        //console.log(this.screensize);
         if( this.screensize==='lg' || this.screensize==='xl' ) this.sideNav.close();
       }
     );

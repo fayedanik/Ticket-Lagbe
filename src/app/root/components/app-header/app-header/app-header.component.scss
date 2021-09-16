@@ -4,6 +4,7 @@
     z-index: 1000;
     overflow: hidden;
     width: 100%;
+    
 }
 
 .active {
@@ -11,7 +12,7 @@
 }
 
 .mattoolbar1 {
-
+    padding-left: 0px !important;
     height: 80px;
     .vl {
         border-left: 1px solid #cfd5e3;
@@ -53,11 +54,10 @@
         font-size: 20px;margin-right: 5px;
     }
 }
-.acountlogin-big {
+.accountlogin-big {
     margin-left:20px;
 }
 .accountlogin-small {
-    margin-left:10px;
-    margin-top:6px;
+    margin-left: 10px;
     cursor: pointer;
 }

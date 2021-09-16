@@ -14,3 +14,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; min-height:
 .mat-form-field-no-padding .mat-form-field-wrapper {
     margin-bottom: -1.25em !important;
 }
+
+.mat-button-focus-overlay {
+    background-color: transparent!important;
+}
