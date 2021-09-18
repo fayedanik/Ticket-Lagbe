@@ -55,11 +55,13 @@ mat-hint {
 
 
 ::ng-deep 
-    .mat-form-field-appearance-outline .mat-form-field-outline {
-       color: rgb(250, 250, 250);
-    }
-    
-    .placeholder {
-        color:rgb(211, 211, 221);
+    .main-container {
+        .mat-form-field-appearance-outline .mat-form-field-outline {
+            color: rgb(250, 250, 250);
+         }
+         
+         .placeholder {
+             color:rgb(211, 211, 221);
+         }
     }
 

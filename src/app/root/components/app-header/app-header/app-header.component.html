@@ -19,8 +19,8 @@
                     </mat-menu>
                 </span>
                 <span class="vl"></span>
-                <span *ngIf="screensize!=='xs'" class="accountlogin-big"><a mat-raised-button><mat-icon class="material-icons-outlined">account_circle</mat-icon> LOGIN</a></span>
-                <span *ngIf="screensize==='xs'" class="accountlogin-small"><a mat-icon-button matTooltip="Login" matTooltipPosition="below"><mat-icon class="material-icons-outlined">account_circle</mat-icon></a></span>
+                <span *ngIf="screensize!=='xs'" class="accountlogin-big"><a mat-raised-button (click)="openLoginDiaglog()"><mat-icon class="material-icons-outlined">account_circle</mat-icon> LOGIN</a></span>
+                <span *ngIf="screensize==='xs'" class="accountlogin-small"><a mat-icon-button matTooltip="Login" (click)="openLoginDiaglog()"><mat-icon class="material-icons-outlined">account_circle</mat-icon></a></span>
             </div>
         </div>
     </mat-toolbar>

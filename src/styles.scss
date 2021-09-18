@@ -18,3 +18,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; min-height:
 .mat-button-focus-overlay {
     background-color: transparent!important;
 }
+
+.mat-dialog {
+    mat-dialog-container {
+        padding: 0px;
+    }
+}
+
+@media only screen and (max-width:599px)  {
+    // .mat-dialog {
+    //     width: 100% !important;
+    //     height: 100% !important;
+    // }
+}

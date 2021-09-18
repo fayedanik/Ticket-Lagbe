@@ -9,6 +9,8 @@ import { AppHeaderComponent } from './root/components/app-header/app-header/app-
 import { AppFooterComponent } from './root/components/app-footer/app-footer/app-footer.component';
 import { MaterialModule } from './material.module';
 import { AppFeatureComponent } from './app-feature/components/app-feature/app-feature.component';
+import { AppLoginComponent } from './root/components/app-login/app-login.component';
+import { AppLoadingComponent } from './root/components/app-loading/app-loading.component';
 
 
 
@@ -18,7 +20,9 @@ import { AppFeatureComponent } from './app-feature/components/app-feature/app-fe
     AppComponent,
     AppHeaderComponent,
     AppFooterComponent,
-    AppFeatureComponent
+    AppFeatureComponent,
+    AppLoginComponent,
+    AppLoadingComponent
   ],
   imports: [
     FlexLayoutModule,

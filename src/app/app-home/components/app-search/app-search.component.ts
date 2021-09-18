@@ -4,7 +4,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable, Subscription } from 'rxjs';
 import { DatePipe } from '@angular/common';
-import { startWith, map } from 'rxjs/operators';
+import { startWith, map, filter } from 'rxjs/operators';
+import { MatDatepicker } from '@angular/material/datepicker';
+
 @Component({
   selector: 'app-search',
   templateUrl: './app-search.component.html',
@@ -17,7 +19,9 @@ export class AppSearchComponent implements OnInit {
   usersearchForm:FormGroup;
   filteredcitynamefordeparture:Observable<string[]>;
   filteredcitynamefordestination:Observable<string[]>;
-  cityName:string[] = ['Badarganj','Bajitpur','Bandarban','Baniachang','Barisal','Bera','Bhairab Bazar' ,'Bhandaria','Bhatpara Abhaynagar','Bheramara','Bhola','Bogra','Burhanuddin','Char Bhadrasan','Chhagalnaiya','Chhatak','Chilmari','Chittagong','Comilla','Cox\'s Bazar','Dhaka','Dinajpur','Dohar','Faridpur','Fatikchari','Feni','Gafargaon','Gaurnadi','Habiganj','Hajiganj','Ishurdi','Jamalpur','Jessore','Jhingergacha','Joypur Hat','Kalia','Kaliganj','Kesabpur','Khagrachhari','Khulna','Kishorganj','Kushtia','Laksham','Lakshmipur','Lalmanirhat','Lalmohan','Madaripur','Manikchari','Mathba','Maulavi Bazar','Mehendiganj','Mirzapur','Morrelgonj','Muktagacha','Mymensingh','Nabinagar','Nagarpur','Nageswari','Nalchiti','Narail','Narayanganj','Narsingdi','Nawabganj','Netrakona','Pabna','Palang','Panchagarh','Par Naogaon','Parbatipur','Patiya','Phultala','Pirgaaj','Pirojpur','Raipur','Rajshahi','Ramganj','Rangpur','Raojan','Saidpur','Sakhipur','Sandwip','Sarankhola','Sarishabari','Satkania','Satkhira','Shahzadpur','Sherpur','Shibganj','Sirajganj','Sylhet','Chakaria','Tangail','Teknaf','Thakurgaon','Tungi','Tungipara','Uttar Char Fasson'];
+  cityName:string[] = ['Anik','Anik','Anik','Anik','Anik','Anik','Anik','Anik','Anik','Anik','Anik','Anik','Anik','Anik','Anik','Anik','Badarganj','Bajitpur','Bandarban','Baniachang','Barisal','Bera','Bhairab Bazar' ,'Bhandaria','Bhatpara Abhaynagar','Bheramara','Bhola','Bogra','Burhanuddin','Char Bhadrasan','Chhagalnaiya','Chhatak','Chilmari','Chittagong','Comilla','Cox\'s Bazar','Dhaka','Dinajpur','Dohar','Faridpur','Fatikchari','Feni','Gafargaon','Gaurnadi','Habiganj','Hajiganj','Ishurdi','Jamalpur','Jessore','Jhingergacha','Joypur Hat','Kalia','Kaliganj','Kesabpur','Khagrachhari','Khulna','Kishorganj','Kushtia','Laksham','Lakshmipur','Lalmanirhat','Lalmohan','Madaripur','Manikchari','Mathba','Maulavi Bazar','Mehendiganj','Mirzapur','Morrelgonj','Muktagacha','Mymensingh','Nabinagar','Nagarpur','Nageswari','Nalchiti','Narail','Narayanganj','Narsingdi','Nawabganj','Netrakona','Pabna','Palang','Panchagarh','Par Naogaon','Parbatipur','Patiya','Phultala','Pirgaaj','Pirojpur','Raipur','Rajshahi','Ramganj','Rangpur','Raojan','Saidpur','Sakhipur','Sandwip','Sarankhola','Sarishabari','Satkania','Satkhira','Shahzadpur','Sherpur','Shibganj','Sirajganj','Sylhet','Chakaria','Tangail','Teknaf','Thakurgaon','Tungi','Tungipara','Uttar Char Fasson'];
+  @ViewChild('focustocity',{static:true}) focustocity:ElementRef;
+  @ViewChild('picker',{static:true}) datepicker:MatDatepicker<Date>;
 
   constructor( public mediaobserver:MediaObserver,private router:Router,private route:ActivatedRoute, private fb:FormBuilder ) { }
 
@@ -50,7 +54,9 @@ export class AppSearchComponent implements OnInit {
   private _filter(value:string):string[] {
     const filtervalue = value.toLowerCase();
     if( value.length<3 ) return [];
-    return this.cityName.filter( option => option.toLowerCase().includes(filtervalue));
+    //return this.cityName.filter( option => option.toLowerCase().includes(filtervalue));
+    return this.cityName.filter( option => option.toLowerCase().startsWith(filtervalue));
+
   }
 
   getminvaliddate() {
@@ -76,5 +82,17 @@ export class AppSearchComponent implements OnInit {
       window.alert("No city found");
     }
     
+  }
+  goto(num:number) {
+    if( num===1 ) {
+      if( !this.usersearchForm.value["tocity"] ) {
+          this.focustocity.nativeElement.focus();
+      }
+    }
+    if( num===2 ) {
+      if( !this.usersearchForm.value["dataofjourney"] ) {
+        this.datepicker.open();
+      } 
+    }
   }
 }
