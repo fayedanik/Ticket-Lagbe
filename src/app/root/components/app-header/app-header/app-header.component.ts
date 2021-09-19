@@ -1,7 +1,9 @@
 import { EventEmitter, Output } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { MediaChange, MediaObserver } from '@angular/flex-layout';
+import { MatDialog } from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
+import { AppLoginComponent } from '../../app-login/app-login.component';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +14,7 @@ export class AppHeaderComponent implements OnInit {
 
   @Output() public sidenavToggle = new EventEmitter();
 
-  constructor( public mediaobserver: MediaObserver ) { }
+  constructor( public mediaobserver: MediaObserver,public dialog:MatDialog ) { }
   
   screensize:string = 'lg';
   mediaSub:Subscription;
@@ -37,6 +39,16 @@ export class AppHeaderComponent implements OnInit {
     else {
       return '150px';
     }
+  }
+
+  openLoginDiaglog() {
+    let options = {
+      panelClass:'mat-dialog',
+      width:'100vw',
+      maxWidth:'400px',
+      autoFocus:false
+    }
+    this.dialog.open(AppLoginComponent,options);
   }
 
   ngOnDestroy() {

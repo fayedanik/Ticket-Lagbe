@@ -1,0 +1,54 @@
+.img_res {
+    width: 100px;
+    height: 100px;
+    margin: 25px 0 25px 0;
+}
+.matformfield {
+    width: 100%;
+    font-weight: 400;
+}
+.dialogcontainer {
+    width: 100%;
+    padding: 0 20px 30px 20px;
+    font-size: 14px;
+    .submitform {
+        button {
+            width: 100%;
+            height: 59px;
+            font-weight: 600px;
+            background: rgba(117, 19, 93, 1);
+            color: #fff;
+        }
+    }
+    a {
+        text-decoration: none;
+        cursor: pointer;
+        color:rgba(117, 19, 93, 1);
+    }
+}
+
+.matbtn {
+    .mat-button {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+}
+.dialog-close {
+    mat-icon {
+        opacity: 0.5 !important;
+    }
+    mat-icon:hover {
+        opacity: 1 !important;
+    }
+}
+
+::ng-deep 
+    .mat-dialog-title {
+        .mat-form-field-appearance-outline .mat-form-field-outline {
+            color: rgb(153, 151, 151);
+         }
+         
+         .placeholder {
+             color:rgb(153, 151, 151);
+         }
+    }

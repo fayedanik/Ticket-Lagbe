@@ -13,8 +13,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
-
-
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
     imports:[
         MatSliderModule,
@@ -29,7 +29,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
         MatNativeDateModule,
         MatDatepickerModule,
         MatTabsModule,
-        MatCardModule
+        MatCardModule,
+        MatTooltipModule,
+        MatDialogModule
     ],
     exports:[
         MatSliderModule,
@@ -45,7 +47,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
         MatNativeDateModule,
         MatDatepickerModule,
         MatTabsModule,
-        MatCardModule
+        MatCardModule,
+        MatTooltipModule,
+        MatDialogModule
     ],
     providers:[
 
