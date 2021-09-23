@@ -33,14 +33,7 @@
         padding: 0 !important;
     }
 }
-.dialog-close {
-    mat-icon {
-        opacity: 0.5 !important;
-    }
-    mat-icon:hover {
-        opacity: 1 !important;
-    }
-}
+
 
 ::ng-deep 
     .mat-dialog-title {

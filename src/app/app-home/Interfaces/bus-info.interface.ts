@@ -1,8 +1,9 @@
-import { Time } from "@angular/common";
-
 
 export interface BusInfo {
+    busUniqID:number;
     operatorName:string;
+    busId:string;
+    busType:string;
     departureTime:string;
     arrivalTime:string;
     startingPoint:string;

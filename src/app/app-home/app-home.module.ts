@@ -17,6 +17,7 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatExpansionModule } from "@angular/material/expansion";
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from "@angular/material/sort";
+import { AppViewSeatsComponent } from "./components/app-view-seats/app-view-seats.component";
 
 @NgModule({
     declarations:[
@@ -24,7 +25,8 @@ import { MatSortModule } from "@angular/material/sort";
         CarouselComponent,
         HowtobuyComponent,
         AppSearchComponent,
-        AppSearchResultComponent
+        AppSearchResultComponent,
+        AppViewSeatsComponent
     ],
     imports:[
         FlexLayoutModule,
@@ -42,8 +44,7 @@ import { MatSortModule } from "@angular/material/sort";
         MatTableModule,
         MatSortModule
     ],
-    exports:[],
-    providers:[]
+    exports:[]
 })
 
 export class AppHomeModule {

@@ -6,6 +6,9 @@ import { Observable, Subscription } from 'rxjs';
 import { DatePipe } from '@angular/common';
 import { startWith, map, filter } from 'rxjs/operators';
 import { MatDatepicker } from '@angular/material/datepicker';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { CityNameService } from '../../services/cityname.service';
+
 
 @Component({
   selector: 'app-search',
@@ -19,13 +22,14 @@ export class AppSearchComponent implements OnInit {
   usersearchForm:FormGroup;
   filteredcitynamefordeparture:Observable<string[]>;
   filteredcitynamefordestination:Observable<string[]>;
-  cityName:string[] = ['Anik','Anik','Anik','Anik','Anik','Anik','Anik','Anik','Anik','Anik','Anik','Anik','Anik','Anik','Anik','Anik','Badarganj','Bajitpur','Bandarban','Baniachang','Barisal','Bera','Bhairab Bazar' ,'Bhandaria','Bhatpara Abhaynagar','Bheramara','Bhola','Bogra','Burhanuddin','Char Bhadrasan','Chhagalnaiya','Chhatak','Chilmari','Chittagong','Comilla','Cox\'s Bazar','Dhaka','Dinajpur','Dohar','Faridpur','Fatikchari','Feni','Gafargaon','Gaurnadi','Habiganj','Hajiganj','Ishurdi','Jamalpur','Jessore','Jhingergacha','Joypur Hat','Kalia','Kaliganj','Kesabpur','Khagrachhari','Khulna','Kishorganj','Kushtia','Laksham','Lakshmipur','Lalmanirhat','Lalmohan','Madaripur','Manikchari','Mathba','Maulavi Bazar','Mehendiganj','Mirzapur','Morrelgonj','Muktagacha','Mymensingh','Nabinagar','Nagarpur','Nageswari','Nalchiti','Narail','Narayanganj','Narsingdi','Nawabganj','Netrakona','Pabna','Palang','Panchagarh','Par Naogaon','Parbatipur','Patiya','Phultala','Pirgaaj','Pirojpur','Raipur','Rajshahi','Ramganj','Rangpur','Raojan','Saidpur','Sakhipur','Sandwip','Sarankhola','Sarishabari','Satkania','Satkhira','Shahzadpur','Sherpur','Shibganj','Sirajganj','Sylhet','Chakaria','Tangail','Teknaf','Thakurgaon','Tungi','Tungipara','Uttar Char Fasson'];
+  cityName:string[];
   @ViewChild('focustocity',{static:true}) focustocity:ElementRef;
   @ViewChild('picker',{static:true}) datepicker:MatDatepicker<Date>;
 
-  constructor( public mediaobserver:MediaObserver,private router:Router,private route:ActivatedRoute, private fb:FormBuilder ) { }
+  constructor( public mediaobserver:MediaObserver,private router:Router,private route:ActivatedRoute, private fb:FormBuilder, private _snackbar:MatSnackBar,private citynameService: CityNameService ) { }
 
   ngOnInit(): void {
+    this.cityName = this.citynameService.getcityName();
     this.cityName.sort();
     this.mediaSub = this.mediaobserver.media$.subscribe(
       (res:MediaChange) => {
@@ -75,11 +79,17 @@ export class AppSearchComponent implements OnInit {
     var tocity = this.usersearchForm.value["tocity"];
     var fromdate = new DatePipe('en-US').transform(this.usersearchForm.value["dateofjourney"],'dd-MM-yyyy');
     var retdate = new DatePipe('en-US').transform(this.usersearchForm.value["retofjourney"],'dd-MM-yyyy');
+    if( !retdate ) {
+      retdate = '';
+    }
     if( this.cityName.indexOf(fromcity)!=-1 && this.cityName.indexOf(tocity)!=-1 ) {
-      this.router.navigate(['search/bus'],{queryParams:{fromcity:fromcity,tocity:tocity,dateofjourney:fromdate,retofjoureny:retdate}});
+      this.router.navigate(['search/bus'],{queryParams:{fromcity:fromcity,tocity:tocity,dateofjourney:fromdate,retofjourney:retdate}});
     }
     else {
-      window.alert("No city found");
+      this._snackbar.open('No city Found','x',{
+        duration: 3000,
+        panelClass : 'notify-alert'
+      });
     }
     
   }
