@@ -84,30 +84,33 @@
                                         </mat-option>
                                       </mat-select>
                                 </mat-form-field>
+                                <div>
+                                    <div fxLayout="row" fxLayoutAlign="space-between center" class="seat_selection_header">
+                                        <h4>Seats</h4>
+                                        <h4>Fare</h4>
+                                    </div>
+                                    <!-- <div *ngIf="!occupiedSeats.length"><h2>No seat Selected!</h2></div> -->
+                                    <div *ngIf="occupiedSeats.length" fxLayout="row" fxLayoutAlign="space-between center" class="seat_selection">
+                                        <ul>
+                                            <li *ngFor="let item of occupiedSeats">{{ item }}</li>
+                                        </ul>
+                                        <ul>
+                                            <li *ngFor="let item of occupiedSeats">৳{{ 400 }}</li>
+                                        </ul>
+                                    </div>
+                                    <div fxLayout="row" fxLayoutAlign="center center" class="seat_selection_bottom" *ngIf="occupiedSeats.length">
+                                        <h4>Total Amount: ৳{{  occupiedSeats.length*400 }}</h4>
+                                    </div>
+                                </div>
+                                <div fxLayout="row">
+                                    <button mat-raised-button class="btn-submit">Confirm Seats</button>
+                                </div>
                             </form>
-                            <div>
-                                <div fxLayout="row" fxLayoutAlign="space-between center" class="seat_selection_header">
-                                    <h4>Seats</h4>
-                                    <h4>Fare</h4>
-                                </div>
-                                <!-- <div *ngIf="!occupiedSeats.length"><h2>No seat Selected!</h2></div> -->
-                                <div *ngIf="occupiedSeats.length" fxLayout="row" fxLayoutAlign="space-between center" class="seat_selection">
-                                    <ul>
-                                        <li *ngFor="let item of occupiedSeats">{{ item }}</li>
-                                    </ul>
-                                    <ul>
-                                        <li *ngFor="let item of occupiedSeats">৳{{ 400 }}</li>
-                                    </ul>
-                                </div>
-                                <div fxLayout="row" fxLayoutAlign="center center" class="seat_selection_bottom" *ngIf="occupiedSeats.length">
-                                    <h4>Total Amount:৳{{  occupiedSeats.length*400 }}</h4>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </mat-tab>
                 <mat-tab label="Boarding Points">
-                    <div class="mat-elevation-z8 m_10">
+                    <div class="m_10">
                         <table mat-table [dataSource]="databoardingPointSource">
                             <ng-container matColumnDef="location">
                                 <th mat-header-cell *matHeaderCellDef>Location</th>
@@ -123,7 +126,7 @@
                     </div>
                 </mat-tab>
                 <mat-tab label="Dropping Points">
-                    <div class="mat-elevation-z8 m_10">
+                    <div class="m_10">
                         <table mat-table [dataSource]="datadroppingPointSource">
                             <ng-container matColumnDef="location">
                                 <th mat-header-cell *matHeaderCellDef>Location</th>

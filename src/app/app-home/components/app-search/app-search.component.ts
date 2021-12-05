@@ -8,6 +8,7 @@ import { startWith, map, filter } from 'rxjs/operators';
 import { MatDatepicker } from '@angular/material/datepicker';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CityNameService } from '../../services/cityname.service';
+import { AppIconsnackbarComponent } from 'src/app/app-iconsnackbar/app-iconsnackbar.component';
 
 
 @Component({
@@ -25,6 +26,7 @@ export class AppSearchComponent implements OnInit {
   cityName:string[];
   @ViewChild('focustocity',{static:true}) focustocity:ElementRef;
   @ViewChild('picker',{static:true}) datepicker:MatDatepicker<Date>;
+  @ViewChild('focusdateofJoureny',{static:true}) focusdateofJourney:ElementRef;
 
   constructor( public mediaobserver:MediaObserver,private router:Router,private route:ActivatedRoute, private fb:FormBuilder, private _snackbar:MatSnackBar,private citynameService: CityNameService ) { }
 
@@ -77,8 +79,9 @@ export class AppSearchComponent implements OnInit {
   onSubmit() {
     var fromcity = this.usersearchForm.value["fromcity"];
     var tocity = this.usersearchForm.value["tocity"];
-    var fromdate = new DatePipe('en-US').transform(this.usersearchForm.value["dateofjourney"],'dd-MM-yyyy');
-    var retdate = new DatePipe('en-US').transform(this.usersearchForm.value["retofjourney"],'dd-MM-yyyy');
+    //console.log(this.usersearchForm.value["dateofjourney"]);
+    var fromdate = new DatePipe('en-US').transform(this.usersearchForm.value["dateofjourney"],'yyyy-MM-dd');
+    var retdate = new DatePipe('en-US').transform(this.usersearchForm.value["retofjourney"],'yyyy-MM-dd');
     if( !retdate ) {
       retdate = '';
     }
@@ -86,9 +89,13 @@ export class AppSearchComponent implements OnInit {
       this.router.navigate(['search/bus'],{queryParams:{fromcity:fromcity,tocity:tocity,dateofjourney:fromdate,retofjourney:retdate}});
     }
     else {
-      this._snackbar.open('No city Found','x',{
+      this._snackbar.openFromComponent(AppIconsnackbarComponent, {
         duration: 3000,
-        panelClass : 'notify-alert'
+        panelClass: 'notify-alert',
+        data:{
+          message:'No city found',
+          icon: 'close'
+        }
       });
     }
     
@@ -96,11 +103,12 @@ export class AppSearchComponent implements OnInit {
   goto(num:number) {
     if( num===1 ) {
       if( !this.usersearchForm.value["tocity"] ) {
-          this.focustocity.nativeElement.focus();
+        this.focustocity.nativeElement.focus();
       }
     }
     if( num===2 ) {
-      if( !this.usersearchForm.value["dataofjourney"] ) {
+      if( !this.usersearchForm.value["dateofjourney"] ) {
+        this.focusdateofJourney.nativeElement.focus();
         this.datepicker.open();
       } 
     }

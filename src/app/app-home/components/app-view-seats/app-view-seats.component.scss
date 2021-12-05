@@ -9,7 +9,7 @@
     
     overflow-x: hidden;
     .seat-preference {
-        padding: 10px !important;
+        padding: 10px!important;
         background: rgba(212, 210, 210, 0.3);
         margin-top: 20px;
     }
@@ -94,7 +94,7 @@
         padding: 10px;
         font-weight: 600px;
         h4 {
-            color: rgb(48, 228, 41);
+            color: #679965;
             padding: 0;
             margin: 0;
         }
@@ -104,6 +104,14 @@
     }
     mat-form-field {
         width: 100%;
+    }
+    .btn-submit {
+        width: 100%;
+        background: #75135d;
+        color: #fff;
+        padding: 4px 8px;
+        margin-top: 10px;
+        
     }
     @media only screen and (max-width:799px) {
         .driver_wheel {

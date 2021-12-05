@@ -15,8 +15,8 @@
                     >
                     <span matPrefix><mat-icon class="material-icons-outlined" style="margin-right: 5px;">room</mat-icon>&nbsp;</span>
                     <mat-hint *ngIf="usersearchForm.get('fromcity').touched && !usersearchForm.get('fromcity').value">Please select departure city</mat-hint>
-                    <mat-autocomplete #fromcity="matAutocomplete" class="matautocompletepanel">
-                        <mat-option *ngFor="let option of filteredcitynamefordeparture | async" [value]="option" (click)="goto(1)">
+                    <mat-autocomplete #fromcity="matAutocomplete" class="matautocompletepanel" (optionSelected)="goto(1)">
+                        <mat-option *ngFor="let option of filteredcitynamefordeparture | async" [value]="option">
                             {{ option }}
                         </mat-option>
                     </mat-autocomplete>
@@ -34,8 +34,8 @@
                     >
                     <span matPrefix><mat-icon class="material-icons-outlined" style="margin-right: 5px;">room</mat-icon>&nbsp;</span>
                     <mat-hint *ngIf="usersearchForm.get('tocity').touched && !usersearchForm.get('tocity').value">Please select your destination city</mat-hint>
-                    <mat-autocomplete #tocity="matAutocomplete" class="matautocompletepanel">
-                        <mat-option *ngFor="let option of filteredcitynamefordestination | async" [value]="option" (click)="goto(2)">
+                    <mat-autocomplete #tocity="matAutocomplete" class="matautocompletepanel" (optionSelected)="goto(2)">
+                        <mat-option *ngFor="let option of filteredcitynamefordestination | async" [value]="option">
                             {{ option }}
                         </mat-option>
                     </mat-autocomplete>

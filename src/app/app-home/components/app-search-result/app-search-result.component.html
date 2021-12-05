@@ -1,11 +1,18 @@
-<div *ngIf="invalidRequest" class="invalid-search-container" fxLayout="row" fxLayoutAlign="center center">
+
+
+<div *ngIf="isloading" class="loading-container" fxLayout="row" fxLayoutAlign="center center">
+    <h2>Loading</h2>
+</div>
+
+<div *ngIf="!isloading && invalidRequest" class="invalid-search-container" fxLayout="row" fxLayoutAlign="center center">
     <h1>Invalid Request Parameter</h1>
 </div>
 
-<div class="search-result-container" *ngIf="!invalidRequest">
+<div class="search-result-container" *ngIf="!invalidRequest && !isloading">
 
     <div class="container1">
-        <h2>Dhaka To Chittagong On 04-01-2021,Friday</h2>
+        <!-- <h2>Dhaka To Chittagong On 04-01-2021,Friday</h2> -->
+        <h2 *ngIf="fromcity && tocity && dateofjourney && currentDay!==-1">{{ fromcity }} To {{ tocity }} On {{ dateofjourney | date:'dd-MM-yyyy' }}, {{ dayName[currentDay] }}</h2>
         <hr>
         <div class="expansion-panel">
             <mat-accordion displayMode="flat">
@@ -16,19 +23,25 @@
                         </mat-panel-title>
                     </mat-expansion-panel-header>
                     <div class="form-container">
-                        <form>
+                        <form [formGroup]="modifiedusersearchForm" (ngSubmit)="onSubmit()">
                             <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center">
                                 <div fxFlex="25">
                                     <mat-form-field appearance="outline" class="matformfield mat-form-field-no-padding">
                                         <mat-label class="placeholder">From</mat-label>
-                                        <input matInput type="text">
+                                        <input 
+                                            matInput 
+                                            type="text"
+                                            formControlName="fromcity">
                                         <span matPrefix><mat-icon class="material-icons-outlined" style="margin-right: 5px;">room</mat-icon>&nbsp;</span>
                                     </mat-form-field>
                                 </div>
                                 <div fxFlex="25">
                                     <mat-form-field appearance="outline" class="matformfield mat-form-field-no-padding">
                                         <mat-label class="placeholder">To</mat-label>
-                                        <input matInput type="text">
+                                        <input 
+                                            matInput 
+                                            type="text"
+                                            formControlName="tocity">
                                         <span matPrefix><mat-icon class="material-icons-outlined" style="margin-right: 5px;">room</mat-icon>&nbsp;</span>
                                     </mat-form-field>
                                 </div>
@@ -39,6 +52,10 @@
                                             matInput
                                             [matDatepicker]="picker"
                                             (click)="picker.open()"
+                                            readonly
+                                            formControlName="dateofjourney"
+                                            [min]="getminvaliddate()"
+                                            [max]="getmaxvaliddate()"
                                             >
                                         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                                         <span matPrefix><mat-icon class="material-icons-outlined" style="margin-right:9px;">schedule</mat-icon>&nbsp;</span>
@@ -46,7 +63,7 @@
                                     </mat-form-field>
                                 </div>
                                 <div fxFlex="25" fxLayout="row" fxLayoutAlign="center center" [ngClass]="{ m_5: screensize==='xs'|| screensize==='sm' || screensize==='md'}">
-                                    <button mat-raised-button style="background-color: #75135d;color:#fff;" type="button" (click)="onSubmit()">Search</button>
+                                    <button mat-raised-button style="background-color: #75135d;color:#fff;" type="submit">Search</button>
                                 </div>
                             </div>
                         </form>

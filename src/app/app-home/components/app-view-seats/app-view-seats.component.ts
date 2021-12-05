@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
+import { AppIconsnackbarComponent } from 'src/app/app-iconsnackbar/app-iconsnackbar.component';
 import { locationTime } from '../../Interfaces/location-time.interface';
 
 @Component({
@@ -52,9 +53,13 @@ export class AppViewSeatsComponent implements OnInit {
     } else {
       elem.add("bg-selected");
       if( this.occupiedSeats.length >=4 ) {
-        this._snackbar.open('Maximum 4 seats can be selected at a time','x',{
+        this._snackbar.openFromComponent(AppIconsnackbarComponent, {
           duration: 3000,
-          panelClass : 'notify-alert'
+          panelClass: 'notify-alert',
+          data:{
+            message:'Maximum 4 seats can be selected at a time',
+            icon: 'close'
+          }
         });
         elem.remove("bg-selected");
       } else {

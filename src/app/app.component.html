@@ -1,6 +1,6 @@
-<div id="container">
+<div class="content-outer-container">
   <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
-  <div id="main">
+  <div class="content-inner-container">
     <mat-sidenav-container>
       <mat-sidenav #sidenav role="navigation">
         <div fxLayout="column wrap" fxLayoutAlign="space-evenly center" class="sidenavup">
@@ -20,5 +20,4 @@
     </mat-sidenav-container>
   </div>
 </div>
-<app-feature></app-feature>
 <app-footer></app-footer>

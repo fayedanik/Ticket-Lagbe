@@ -10,7 +10,7 @@ import { NgbCarouselModule, NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { AppSearchComponent } from './components/app-search/app-search.component';
 import { AppSearchResultComponent } from './components/app-search-result/app-search-result.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { ReactiveFormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatInputModule } from "@angular/material/input";
 import { MatSelectModule } from "@angular/material/select";
 import { MatButtonModule } from "@angular/material/button";
@@ -32,6 +32,7 @@ import { AppViewSeatsComponent } from "./components/app-view-seats/app-view-seat
         FlexLayoutModule,
         CommonModule,
         ReactiveFormsModule,
+        FormsModule,
         MaterialModule,
         AppHomeRoutingModule,
         NgbModule,
