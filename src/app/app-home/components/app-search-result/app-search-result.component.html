@@ -1,7 +1,10 @@
 
 
 <div *ngIf="isloading" class="loading-container" fxLayout="row" fxLayoutAlign="center center">
-    <h2>Loading</h2>
+    <div fxLayout="column" fxLayoutGap="8px" fxLayoutAlign="center center">
+        <h2 class="margin-top:-8px">Loading</h2>
+        <mat-spinner [diameter]="40"></mat-spinner>
+    </div>
 </div>
 
 <div *ngIf="!isloading && invalidRequest" class="invalid-search-container" fxLayout="row" fxLayoutAlign="center center">
