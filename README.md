@@ -1,6 +1,10 @@
-# Online-eTicket-Management-System
+# Ticket Lagbe
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.9.
+Ticket Lagbe is an online e-ticket management front end angular web application. This is a single page web application designed and created by Fayed Anik. Any one who wants to integrate backend can easily clone the project and start developing.
+
+# Demo
+
+https://youtube.com
 
 ## Development server
 
