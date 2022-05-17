@@ -1,4 +1,12 @@
 
+.content-outer-container {
+    min-height: 100%;
+}
+
+.content-inner-container {
+    //padding-bottom: 120px;
+}
+
 mat-sidenav-container,mat-sidenav-content,mat-sidenav {
     height: 100%;
 }
@@ -8,6 +16,7 @@ mat-sidenav-container,mat-sidenav-content,mat-sidenav {
 .active {
     border: 1px solid #fff;
 }
+
 mat-sidenav {
     width: 300px;
     background-color: rgba(117, 19, 93, 1);

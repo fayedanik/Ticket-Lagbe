@@ -5,8 +5,8 @@
     padding: 0;
     box-sizing: border-box;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; min-height: 100vh; }
+html, body,app-root { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; min-height: 100%; }
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
@@ -24,10 +24,32 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; min-height:
         padding: 0px;
     }
 }
+.mat-dialog-seat-cotainer {
+    mat-dialog-container {
+        padding: 0px;
+    }
+}
 
+.dialog-close {
+    mat-icon {
+        opacity: 0.5 !important;
+    }
+    mat-icon:hover {
+        opacity: 1 !important;
+    }
+}
+.notify-alert {
+    color: #75135d !important;
+    background: #fff;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    .mat-simple-snackbar-action {
+        color: rgb(207, 14, 14) !important;
+    }
+}
 @media only screen and (max-width:599px)  {
-    // .mat-dialog {
-    //     width: 100% !important;
-    //     height: 100% !important;
-    // }
+    .mat-dialog-seat-cotainer {
+        width: 100% !important;
+        height: 100% !important;
+    }
 }

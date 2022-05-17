@@ -1,0 +1,147 @@
+<div class="seat-container">
+    <div mat-dialog-title>
+        <div fxLayout="row" fxLayoutAlign="end">
+            <button mat-icon-button mat-dialog-close class="dialog-close"><mat-icon>close</mat-icon></button>
+        </div>
+        <div>
+            <mat-tab-group>
+                <mat-tab label="Seat Preferences"> 
+                    <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="space-evenly" class="seat-preference" fxLayoutGap="20px">
+                        <div fxFlex="50" class="seat-arrangement" fxFlex.lt-sm="100">
+                            <div fxLayout="row" class="driver_wheel">
+                                <mat-icon>adjust</mat-icon>
+                            </div>
+                            <div fxLayout="row" class="center">
+                                <ul class="m_10">
+                                    <li *ngFor="let seat of seatName;let i=index" class="seat" [attr.id]="'seat'+'-'+i">
+                                        <a (click)="onClickselectSeat(i)">{{seat}}1</a>
+                                    </li>
+                                </ul>
+                                <ul class="m_10">
+                                    <li *ngFor="let seat of seatName;let i=index;" class="seat" [attr.id]="'seat'+'-'+(i+8)">
+                                        <a (click)="onClickselectSeat(i+8)">{{seat}}2</a>
+                                    </li>
+                                </ul>
+                                <ul class="m_10"></ul>
+                                <ul class="m_10"></ul>
+                                <ul class="m_10"></ul>
+                                <ul class="m_10"></ul>
+                                <ul class="m_10"></ul>
+                                <ul class="m_10">
+                                    <li *ngFor="let seat of seatName;let i=index;" class="seat" [attr.id]="'seat'+'-'+(i+16)">
+                                        <a (click)="onClickselectSeat(i+16)">{{seat}}3</a>
+                                    </li>
+                                </ul>
+                                <ul class="m_10">
+                                    <li *ngFor="let seat of seatName;let i=index;" class="seat" [attr.id]="'seat'+'-'+(i+24)">
+                                        <a (click)="onClickselectSeat(i+24)">{{seat}}4</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div fxLayout="row" fxLayoutAlign="space-evenly" class="seat-btm-indicator">
+                                <div fxLayout="column">
+                                    <span class="seat mr_left"></span>
+                                    <label for="">Available</label>
+                                </div>
+                                <div fxLayout="column">
+                                    <span class="seat mr_left bg-black"></span>
+                                    <label for="">Booked</label>
+                                </div>
+                                <div fxLayout="column">
+                                    <span class="seat mr_left bg-green"></span>
+                                    <label for="">Selected</label>
+                                </div>
+                                <div fxLayout="column">
+                                    <span class="seat mr_left bg-block"></span>
+                                    <label for="">Blocked</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="travel-details" fxFlex="50">
+                            <!-- <h2>Green Line Poribohon</h2>
+                            <h3>Non A-C, Seater Sleeper, Deluxe</h3>
+                            <h3>Date: Sat, 2 Oct, 2021 Time: 06:30 PM - 07:00 AM</h3> -->
+                            <form>
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Boarding Point</mat-label>
+                                    <mat-select>
+                                      <mat-option *ngFor="let elem of boardingPoints" [value]="elem">
+                                        <div fxLayout="row" fxLayoutAlign="space-between">
+                                            <div>{{ elem.location }} </div>
+                                            <div>{{ elem.time }}</div>
+                                        </div>
+                                      </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Dropping Point</mat-label>
+                                    <mat-select>
+                                        <mat-option *ngFor="let elem of droppingPoints" [value]="elem">
+                                          <div fxLayout="row" fxLayoutAlign="space-between">
+                                              <div>{{ elem.location }} </div>
+                                              <div>{{ elem.time }}</div>
+                                          </div>
+                                        </mat-option>
+                                      </mat-select>
+                                </mat-form-field>
+                                <div>
+                                    <div fxLayout="row" fxLayoutAlign="space-between center" class="seat_selection_header">
+                                        <h4>Seats</h4>
+                                        <h4>Fare</h4>
+                                    </div>
+                                    <!-- <div *ngIf="!occupiedSeats.length"><h2>No seat Selected!</h2></div> -->
+                                    <div *ngIf="occupiedSeats.length" fxLayout="row" fxLayoutAlign="space-between center" class="seat_selection">
+                                        <ul>
+                                            <li *ngFor="let item of occupiedSeats">{{ item }}</li>
+                                        </ul>
+                                        <ul>
+                                            <li *ngFor="let item of occupiedSeats">৳{{ 400 }}</li>
+                                        </ul>
+                                    </div>
+                                    <div fxLayout="row" fxLayoutAlign="center center" class="seat_selection_bottom" *ngIf="occupiedSeats.length">
+                                        <h4>Total Amount: ৳{{  occupiedSeats.length*400 }}</h4>
+                                    </div>
+                                </div>
+                                <div fxLayout="row">
+                                    <button mat-raised-button class="btn-submit">Confirm Seats</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </mat-tab>
+                <mat-tab label="Boarding Points">
+                    <div class="m_10">
+                        <table mat-table [dataSource]="databoardingPointSource">
+                            <ng-container matColumnDef="location">
+                                <th mat-header-cell *matHeaderCellDef>Location</th>
+                                <td mat-cell *matCellDef="let elem">{{ elem.location }}</td>
+                            </ng-container>
+                            <ng-container matColumnDef="time">
+                                <th mat-header-cell *matHeaderCellDef>Time</th>
+                                <td mat-cell *matCellDef="let elem">{{ elem.time }}</td>
+                            </ng-container>
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let rowdata;columns:displayedColumns"></tr>
+                        </table>
+                    </div>
+                </mat-tab>
+                <mat-tab label="Dropping Points">
+                    <div class="m_10">
+                        <table mat-table [dataSource]="datadroppingPointSource">
+                            <ng-container matColumnDef="location">
+                                <th mat-header-cell *matHeaderCellDef>Location</th>
+                                <td mat-cell *matCellDef="let elem">{{ elem.location }}</td>
+                            </ng-container>
+                            <ng-container matColumnDef="time">
+                                <th mat-header-cell *matHeaderCellDef>Time</th>
+                                <td mat-cell *matCellDef="let elem">{{ elem.time }}</td>
+                            </ng-container>
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let rowdata;columns:displayedColumns"></tr>
+                        </table>
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+</div>

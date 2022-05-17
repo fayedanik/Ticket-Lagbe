@@ -10,13 +10,14 @@ import { NgbCarouselModule, NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { AppSearchComponent } from './components/app-search/app-search.component';
 import { AppSearchResultComponent } from './components/app-search-result/app-search-result.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { ReactiveFormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatInputModule } from "@angular/material/input";
 import { MatSelectModule } from "@angular/material/select";
 import { MatButtonModule } from "@angular/material/button";
 import { MatExpansionModule } from "@angular/material/expansion";
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from "@angular/material/sort";
+import { AppViewSeatsComponent } from "./components/app-view-seats/app-view-seats.component";
 
 @NgModule({
     declarations:[
@@ -24,12 +25,14 @@ import { MatSortModule } from "@angular/material/sort";
         CarouselComponent,
         HowtobuyComponent,
         AppSearchComponent,
-        AppSearchResultComponent
+        AppSearchResultComponent,
+        AppViewSeatsComponent
     ],
     imports:[
         FlexLayoutModule,
         CommonModule,
         ReactiveFormsModule,
+        FormsModule,
         MaterialModule,
         AppHomeRoutingModule,
         NgbModule,
@@ -42,8 +45,7 @@ import { MatSortModule } from "@angular/material/sort";
         MatTableModule,
         MatSortModule
     ],
-    exports:[],
-    providers:[]
+    exports:[]
 })
 
 export class AppHomeModule {

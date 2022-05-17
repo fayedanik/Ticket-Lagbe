@@ -1,3 +1,8 @@
+.loading-container {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+}
 
 .search-result-container {
     background-color: #e4e4e4;
@@ -41,6 +46,18 @@
     width: 100%;
 }
 
+.dashboard-desc {
+    p {
+        margin: 0;
+        padding: 0;
+    }
+    button {
+        background-color: #75135d;
+        color:#fff;
+    }
+}
+
+
 .mat-raised-button {
     line-height: 49px !important;
     width: 100%;
@@ -65,9 +82,61 @@ table {
     width: 100%;
 }
 
+.mat-cell {
+    padding: 16px 0px 16px 0;
+}
+
+.mat-row:hover {
+    background-color: rgb(245, 230, 230,0.5);
+}
+
+
+.operatorName {
+    h3 {
+        font-weight: 600 !important;
+        color:#75135d !important;
+    }
+}
+.viewseat {
+    margin-top: 50px;
+    button {
+        padding:10px 22px;
+        border-radius: 5px;
+        background: #75135d;
+        color: #fff;
+        border: none;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    button:hover {
+        background: #6b1556;
+    }
+
+    @media only screen and (max-width:499px) {
+        button {
+            padding: 5px 12px;
+            font-size: 12px;
+            white-space: unset;
+        }
+    }
+}
+
 mat-panel-title {
     color: #728a8e;
     font-family: Poppins, sans-serif;
+}
+
+.p_0{
+    p {
+        margin: 0;
+        padding: 0;
+        white-space: nowrap;
+        color: #292728 !important;
+    }
+}
+.bold {
+    font-weight: bold;
 }
 
 .mat-expansion-panel-header.mat-expanded {
@@ -82,12 +151,23 @@ mat-panel-title {
         padding: 0;
         margin: 0;
         font-weight: 400;
+        color: #7e7e7e;
     }
-    p {
-        padding: 0;
-        margin: 0;
-        font-weight: 600;
-        color:#75135d !important;
+    .p_3 {
+        p {
+            padding: 0;
+            margin: 0;
+            font-weight: 600;
+            margin-left: 3px;
+        }
+    }
+
+    @media only screen and (max-width:999px) {
+        .p_3 {
+            p {
+                margin-left: 0px;
+            }
+        }
     }
 }
 
@@ -100,6 +180,15 @@ mat-expansion-panel-header.mat-expanded:focus {
     mat-panel-title {
         color: #fff !important;
     }
+}
+
+.invalid-search-container {
+    width: 100%;
+    height: 100vh;
+    max-width: calc((100% - (100vw - 1308px)));
+    background: #ffff;
+    padding: 20px;
+    margin: 0 auto;
 }
 
 ::ng-deep 

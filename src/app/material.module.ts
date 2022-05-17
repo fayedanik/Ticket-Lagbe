@@ -15,6 +15,9 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatRippleModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 @NgModule({
     imports:[
         MatSliderModule,
@@ -31,7 +34,10 @@ import { MatDialogModule } from '@angular/material/dialog';
         MatTabsModule,
         MatCardModule,
         MatTooltipModule,
-        MatDialogModule
+        MatDialogModule,
+        MatRippleModule,
+        MatSelectModule,
+        MatSnackBarModule
     ],
     exports:[
         MatSliderModule,
@@ -49,7 +55,10 @@ import { MatDialogModule } from '@angular/material/dialog';
         MatTabsModule,
         MatCardModule,
         MatTooltipModule,
-        MatDialogModule
+        MatDialogModule,
+        MatRippleModule,
+        MatSelectModule,
+        MatSnackBarModule
     ],
     providers:[
 
