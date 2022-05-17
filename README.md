@@ -4,7 +4,7 @@ Ticket Lagbe is an online e-ticket management system front end angular web appli
 
 # Demo
 
-https://youtube.com
+Demo link will be updated soon.
 
 ## Development server
 
