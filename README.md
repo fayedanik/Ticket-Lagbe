@@ -1,6 +1,6 @@
 # Ticket Lagbe
 
-Ticket Lagbe is an online e-ticket management front end angular web application. This is a single page web application designed and created by Fayed Anik. Any one who wants to integrate backend can easily clone the project and start developing.
+Ticket Lagbe is an online e-ticket management system front end angular web application. This is a single page web application designed and created by Fayed Anik. Any one who wants to integrate backend can easily clone the project and start developing.
 
 # Demo
 
