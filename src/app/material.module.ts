@@ -18,6 +18,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatRippleModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 @NgModule({
     imports:[
         MatSliderModule,
@@ -37,7 +38,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
         MatDialogModule,
         MatRippleModule,
         MatSelectModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        MatProgressSpinnerModule
     ],
     exports:[
         MatSliderModule,
@@ -58,7 +60,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
         MatDialogModule,
         MatRippleModule,
         MatSelectModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        MatProgressSpinnerModule
     ],
     providers:[
 
